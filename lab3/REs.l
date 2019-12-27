@@ -1,0 +1,10 @@
+VOID void
+MAIN main
+ID (a|b)*
+INT int
+ASSIGN =
+NUM (0|1)*
+L_BRACKET (
+R_BRACKET )
+L_BRACE {
+R_BRACE }

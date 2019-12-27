@@ -1,0 +1,12 @@
+void main(){
+	int abba = 1001
+	10010
+}
+
+void main(){
+    int abc = 1
+}
+
+void main(){
+    int ab = 12
+}
