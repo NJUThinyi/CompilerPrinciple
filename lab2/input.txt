@@ -1,0 +1,7 @@
+while( abba < 1 ){
+    if( a < 10 ){
+		a = a * 10 + 1 
+	}else{
+		a = a + 1 
+	}
+}

@@ -59,7 +59,28 @@ public class LexAnalysis {
                                 state = 14;
                                 sub_s+=ch;
                                 break;
-                            } else {
+                            } else if(ch=='e'){
+                                state=21;
+                                sub_s+=ch;
+                                break;
+                            }else if(ch=='w'){
+                                state=25;
+                                sub_s+=ch;
+                                break;
+                            }else if(ch=='<'){
+                                state=30;
+                                sub_s+=ch;
+                                break;
+                            }else if(ch=='+'){
+                                state=31;
+                                sub_s+=ch;
+                                break;
+                            }else if(ch=='*'){
+                                state=32;
+                                sub_s+=ch;
+                                break;
+                            }
+                            else{
                                 System.out.println("Invalid Input!");
                             }
                         case 1:
@@ -153,7 +174,10 @@ public class LexAnalysis {
                             if (ch == 'n') {
                                 state = 15;
                                 sub_s+=ch;
-                            } else {
+                            } else if(ch=='f'){
+                                state= 20;
+                                sub_s+=ch;
+                            } else{
                                 System.out.println("Invalid Input!");
                             }
                             break;
@@ -211,6 +235,98 @@ public class LexAnalysis {
                                 }
                             }
                             break;
+                        case 20:    //if-f
+                            System.out.println("<IF, "+sub_s+">");
+                            state=0;
+                            index=i++;
+                            isEnd=true;
+                            break;
+                        case 21:
+                            if(ch=='l'){
+                                state=22;
+                                sub_s+=ch;
+                            }else {
+                                System.out.println("Invalid Input!");
+                            }
+                            break;
+                        case 22:
+                            if(ch=='s'){
+                                state=23;
+                                sub_s+=ch;
+                            }else {
+                                System.out.println("Invalid Input!");
+                            }
+                            break;
+                        case 23:
+                            if(ch=='e'){
+                                state=24;
+                                sub_s+=ch;
+                            }else {
+                                System.out.println("Invalid Input!");
+                            }
+                            break;
+                        case 24:
+                            System.out.println("<ELSE, "+sub_s+">");
+                            state=0;
+                            index=i++;
+                            isEnd=true;
+                            break;
+                        case 25:
+                            if(ch=='h'){
+                                state=26;
+                                sub_s+=ch;
+                            }else {
+                                System.out.println("Invalid Input!");
+                            }
+                            break;
+                        case 26:
+                            if(ch=='i'){
+                                state=27;
+                                sub_s+=ch;
+                            }else {
+                                System.out.println("Invalid Input!");
+                            }
+                            break;
+                        case 27:
+                            if(ch=='l'){
+                                state=28;
+                                sub_s+=ch;
+                            }else {
+                                System.out.println("Invalid Input!");
+                            }
+                            break;
+                        case 28:
+                            if(ch=='e'){
+                                state=29;
+                                sub_s+=ch;
+                            }else {
+                                System.out.println("Invalid Input!");
+                            }
+                            break;
+                        case 29:
+                            System.out.println("<WHILE, "+sub_s+">");
+                            state=0;
+                            index=i++;
+                            isEnd=true;
+                            break;
+                        case 30:
+                            System.out.println("<LESS_THAN, "+sub_s+">");
+                            state=0;
+                            index=i++;
+                            isEnd=true;
+                            break;
+                        case 31:
+                            System.out.println("<ADD, "+sub_s+">");
+                            state=0;
+                            index=i++;
+                            isEnd=true;
+                            break;
+                        case 32:
+                            System.out.println("<MUL, "+sub_s+">");
+                            state=0;
+                            index=i++;
+                            isEnd=true;
+                            break;
                         default:
                             state = 0;
                             break;
@@ -228,5 +344,6 @@ public class LexAnalysis {
                 break;
             }
         }while(sc.hasNext());
+        System.out.println("Over!");
     }
 }

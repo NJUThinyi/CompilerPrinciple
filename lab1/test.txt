@@ -1,7 +1,11 @@
 void main(){
-	int abba = 1001
-	10010
-}
+ 	while( 1100 ){
+ 	    if( abba < 10000 ){
+ 	        abba = abba * 10 + 1
+ 	    }else{
+ 	    }
+ 	}
+ }
 
 void main(){
     int abc = 1
